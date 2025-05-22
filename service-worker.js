@@ -1,5 +1,6 @@
 
 const CACHE_NAME = 'todo-cache-v1';
+const btnTema = document.getElementById('toggleTema');
 const urlsToCache = [
   './',
   './index.html',
@@ -9,6 +10,21 @@ const urlsToCache = [
   './icon-192.png',
   './icon-512.png'
 ];
+
+btnTema.addEventListener('click', () => {
+  document.body.classList.toggle('escuro');
+  const modoEscuro = document.body.classList.contains('escuro');
+  localStorage.setItem('modoEscuro', modoEscuro);
+});
+
+// Aplicar tema salvo ao carregar
+window.addEventListener('load', () => {
+  const modoEscuro = localStorage.getItem('modoEscuro') === 'true';
+  if (modoEscuro) {
+    document.body.classList.add('escuro');
+  }
+});
+
 
 self.addEventListener('install', event => {
   event.waitUntil(
