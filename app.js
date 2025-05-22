@@ -72,4 +72,13 @@ function renderizarTarefas() {
   });
 }
 
+function editarTarefa(index) {
+  const novoTexto = prompt('Edite a tarefa:', tarefas[index].texto);
+  if (novoTexto !== null && novoTexto.trim() !== '') {
+    tarefas[index].texto = novoTexto.trim();
+    salvarTarefas();
+    renderizarTarefas();
+  }
+}
+
 loadTasks();
