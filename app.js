@@ -48,4 +48,28 @@ function loadTasks() {
   });
 }
 
+function renderizarTarefas() {
+  const lista = document.getElementById('listaTarefas');
+  lista.innerHTML = '';
+
+  tarefas.forEach((tarefa, index) => {
+    const li = document.createElement('li');
+    li.textContent = tarefa.texto;
+
+    // Botão Editar
+    const btnEditar = document.createElement('button');
+    btnEditar.textContent = 'Editar';
+    btnEditar.onclick = () => editarTarefa(index);
+
+    // Botão Remover
+    const btnRemover = document.createElement('button');
+    btnRemover.textContent = 'Remover';
+    btnRemover.onclick = () => removerTarefa(index);
+
+    li.appendChild(btnEditar);
+    li.appendChild(btnRemover);
+    lista.appendChild(li);
+  });
+}
+
 loadTasks();
