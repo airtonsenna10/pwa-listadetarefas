@@ -11,21 +11,6 @@ const urlsToCache = [
   './icon-512.png'
 ];
 
-btnTema.addEventListener('click', () => {
-  document.body.classList.toggle('escuro');
-  const modoEscuro = document.body.classList.contains('escuro');
-  localStorage.setItem('modoEscuro', modoEscuro);
-});
-
-// Aplicar tema salvo ao carregar
-window.addEventListener('load', () => {
-  const modoEscuro = localStorage.getItem('modoEscuro') === 'true';
-  if (modoEscuro) {
-    document.body.classList.add('escuro');
-  }
-});
-
-
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
