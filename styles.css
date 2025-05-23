@@ -1,11 +1,9 @@
-
+/* Estilo padrão claro */
 body {
   background-color: white;
   color: black;
   transition: background-color 0.3s, color 0.3s;
   font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  margin: 0;
   padding: 0;
 }
 
@@ -14,30 +12,10 @@ body.escuro {
   color: white;
 }
 
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-input[type="text"] {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
 button {
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
   margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -50,15 +28,7 @@ ul {
 }
 
 li {
-  padding: 8px 0;
-  display: flex;
-  justify-content: space-between;
+  margin: 10px 0;
 }
 
-li button {
-  background: red;
-  border: none;
-  color: white;
-  padding: 5px 8px;
-  border-radius: 5px;
-}
+
